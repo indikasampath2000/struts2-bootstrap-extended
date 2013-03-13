@@ -1,0 +1,1 @@
+This is extended version of struts2-bootstrap
