@@ -31,6 +31,9 @@
 <#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["buttonAppend"]??)><#rt/>
     <#assign buttonAppend = parameters.dynamicAttributes.remove("buttonAppend")/><#rt/>
 </#if><#rt/>
+<#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["buttonId"]??)><#rt/>
+    <#assign buttonId = parameters.dynamicAttributes.remove("buttonId")/><#rt/>
+</#if><#rt/>
 
 <#if inputPrepend??>
 <div class="input-prepend">
@@ -38,7 +41,7 @@
 </#if>
 <#if buttonPrepend??>
 <div class="input-prepend">
-    <button class="btn">${buttonPrepend?html}</button>
+    <button id="${buttonId?html}" class="btn">${buttonPrepend?html}</button>
 </#if>
 <#if inputAppend??>
 <div class="input-append">
@@ -58,7 +61,7 @@
 </div>
 </#if>
 <#if buttonAppend??>
-    <button class="btn">${buttonAppend?html}</button>
+    <button id="${buttonId?html}" class="btn">${buttonAppend?html}</button>
 </div>
 </#if>
 <#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" />
